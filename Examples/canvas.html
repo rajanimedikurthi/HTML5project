@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function doCanvas(){
+       var cElem=document.getElementById("mycanvas");
+       var ctxt=cElem.getContext("2d");
+       ctxt.fillRect(50,25,150,100);
+       setTimeout("callReset()",5000);
+      }
+      function callReset(){
+        var cElem=document.getElementById("mycanvas");
+        var ctxt=cElem.getContext("2d");
+        cElem.width=cElem.width;
+      }
+  </script>
+</head>
+<body onload="doCanvas()">
+  <canvas id="mycanvas" width="300" height="225"></canvas>
+</body>
+</html>

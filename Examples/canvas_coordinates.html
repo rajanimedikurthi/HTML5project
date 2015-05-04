@@ -1,0 +1,61 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function doCanvas(){
+       var cElem=document.getElementById("mycanvas");
+       var ctxt=cElem.getContext("2d");
+       /*path as if drawn pencil will not be shown unless an inx method is called */
+       for(var x=0.5;x<500;x+=10){
+         ctxt.moveTo(x,0);
+         ctxt.lineTo(x,500);
+       }
+      for(var y=0.5;y<500;y+=10){
+         ctxt.moveTo(0,y);
+         ctxt.lineTo(500,y);
+       }
+       ctxt.strokeStyle="#eee";
+       ctxt.stroke();/*ink method*/
+       /*drawing lines  */
+       ctxt.beginPath();
+       ctxt.moveTo(0,40);
+       ctxt.lineTo(240,40);
+       ctxt.moveTo(270,40);
+       ctxt.lineTo(500,40);
+       /*vertical line*/
+       ctxt.moveTo(50,0);
+       ctxt.lineTo(50,250);
+       ctxt.moveTo(50,280);
+       ctxt.lineTo(50,500);
+
+       /*X arrow*/
+       ctxt.moveTo(490, 30);
+       ctxt.lineTo(500,40);
+       ctxt.moveTo(490,50);
+       ctxt.lineTo(500,40);
+      /*y arrow*/
+       ctxt.moveTo(40,490);
+       ctxt.lineTo(50,500);
+       ctxt.moveTo(60,490);
+       ctxt.lineTo(50,500);
+       ctxt.strokeStyle="#000";
+       ctxt.stroke();
+       ctxt.font="bold 25px sans-serif";
+       ctxt.fillText("x", 248, 45);
+       ctxt.fillText("y", 45,270);
+       ctxt.textBaseline="top";
+       ctxt.font="bold 12px sans-serif";
+       ctxt.fillText("(0,0)",0,0);
+       ctxt.fillText("(500,500)",442,482);
+      }
+
+      function callReset(){
+        var cElem=document.getElementById("mycanvas");
+        var ctxt=cElem.getContext("2d");
+        cElem.width=cElem.width;
+      }
+  </script>
+</head>
+<body onload="doCanvas()">
+  <canvas id="mycanvas" width="500" height="500"></canvas>
+</body>
+</html>
